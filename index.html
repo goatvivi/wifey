@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#fff4f3">
 <title>For Vaishnavi ♡</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&display=swap');
 
 :root{--cream:#fff8f1;--pink:#f7dce2;--rose:#d97891;--deep:#8e435b;--ink:#583c45;--muted:#987c82;--white:#fffdfb;--shadow:0 16px 45px #9b53651a}
 *{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100vw}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65;}
@@ -24,7 +24,7 @@ h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2.8rem,8vw,6rem);line-height:1.2;font
 @keyframes gradientBG { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 .hero:before,.hero:after{content:"✿";position:absolute;color:#d9789130;font-size:clamp(8rem,24vw,19rem)}.hero:before{left:-10%;top:5%;animation:floatFlower 12s ease-in-out infinite alternate;} .hero:after{right:-10%;bottom:-10%;animation:floatFlower 15s ease-in-out infinite alternate-reverse;}
 @keyframes floatFlower { 0% { transform: translateY(0) rotate(-20deg); } 100% { transform: translateY(40px) rotate(20deg); } }
-#heroName { display: block; margin-top: 15px; font-family: 'Caveat', 'Comic Sans MS', cursive; font-size: 1.35em; text-shadow: 0 8px 25px rgba(217,120,145,0.4); animation: gentlePulse 3s infinite; }
+#heroName { display: block; margin-top: 5px; font-family: 'Great Vibes', cursive; font-size: 1.8em; font-weight: normal; color: #b84b6b; text-shadow: 0 4px 20px rgba(184,75,107,0.3); animation: gentlePulse 3s infinite; line-height: 1.2; }
 @keyframes gentlePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 .hero-inner{position:relative;z-index:1;max-width:780px}.hero .sub{font-size:1.15rem;color:var(--muted);max-width:540px;margin:0 auto 28px}
 .date-pill{display:inline-block;border:1px solid #e9c4ce;border-radius:99px;padding:7px 16px;color:var(--deep);font:12px Arial,sans-serif;letter-spacing:.1em;margin-bottom:25px;background:#ffffff80}
@@ -71,10 +71,10 @@ input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cur
 /* Lightbox */
 #lightbox { position: fixed; inset: 0; background: rgba(20, 10, 15, 0.95); z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.4s ease; backdrop-filter: blur(8px); }
 #lightbox.active { opacity: 1; pointer-events: auto; }
-#lb-img-wrap { padding: 15px 15px 50px 15px; background: #fffdf9; border-radius: 4px; transform: scale(0.8); transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1); box-shadow: 0 20px 60px rgba(0,0,0,0.6); position: relative; max-width: 95vw; max-height: 85vh;}
+#lb-img-wrap { padding: 15px 15px 20px 15px; background: #fffdf9; border-radius: 4px; transform: scale(0.8); transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1); box-shadow: 0 20px 60px rgba(0,0,0,0.6); position: relative; max-width: 95vw; max-height: 85vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;}
 #lightbox.active #lb-img-wrap { transform: scale(1) rotate(-1deg); }
-#lb-img { max-width: 100%; max-height: 70vh; object-fit: contain; display: block; border-radius: 12px;}
-#lb-caption { font-weight: 700; font-size: 2.8rem !important; color: #8e435b !important; text-shadow: 0 2px 10px rgba(255,255,255,0.8); font-family: 'Caveat', 'Comic Sans MS', cursive; font-size: 2.2rem; color: var(--ink); text-align: center; position: absolute; bottom: 8px; left: 0; width: 100%; padding: 0 10px;}
+#lb-img { max-width: 100%; max-height: 60vh; object-fit: contain; display: block; border-radius: 12px; margin-top: 10px;}
+#lb-caption { font-weight: 700; font-size: 2.4rem !important; color: #8e435b !important; text-shadow: 0 2px 10px rgba(255,255,255,0.8); font-family: 'Caveat', 'Comic Sans MS', cursive; color: var(--ink); text-align: center; position: relative; width: 100%; padding: 0 5px; line-height: 1.1; margin-bottom: 5px;}
 .lb-close { position: absolute; top: 30px; right: 30px; color: white; font-size: 45px; cursor: pointer; transition: 0.3s; text-shadow: 0 2px 10px rgba(0,0,0,0.5); z-index: 2; line-height: 1;}
 .lb-close:hover { transform: scale(1.2) rotate(90deg); color: var(--rose); }
 
@@ -227,14 +227,13 @@ input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cur
 @media(max-width:760px){.navlinks{gap:10px;font-size:10px}.grid,.note-grid{grid-template-columns:1fr 1fr}.hero{min-height:82vh}section{padding:65px 0}}
 @media(max-width:480px){.navin{align-items:flex-start}.navlinks{max-width:220px;justify-content:flex-end}.grid,.note-grid{grid-template-columns:1fr}.countdown{gap:6px}.timebox{min-width:62px;padding:10px}.timebox strong{font-size:21px}}
 
-.jaanu-anim { font-weight: 700; font-size: 4rem !important; letter-spacing: 2px;
-    font-family: 'Caveat', 'Comic Sans MS', cursive;
-    font-size: 3.2rem;
-    color: var(--deep);
-    margin-top: -10px;
+.jaanu-anim { font-weight: normal; font-size: 3.5rem !important; letter-spacing: 1px;
+    font-family: 'Great Vibes', cursive;
+    color: #8e435b;
+    margin-top: -15px;
     margin-bottom: 25px;
     animation: floatJaanu 3.5s ease-in-out infinite;
-    text-shadow: 0 4px 15px rgba(142,67,91,0.3);
+    text-shadow: 0 4px 15px rgba(142,67,91,0.2);
 }
 @keyframes floatJaanu {
     0%, 100% { transform: translateY(0) rotate(-5deg) scale(1); }
@@ -386,7 +385,7 @@ body.theme-red { --cream: #2a1215; --pink: #3d1b20; --rose: #e66775; --deep: #cc
 
 #quotePopup { position: fixed; inset: 0; z-index: 999999; background: rgba(20, 10, 15, 0.95); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.8s ease; }
 #quotePopup.active { opacity: 1; pointer-events: auto; }
-#quoteText { color: #fdf2f2; font-family: Georgia, serif; font-size: clamp(2rem, 6vw, 4rem); text-align: center; max-width: 85%; font-style: italic; transform: scale(0.8); transition: transform 0.8s ease; text-shadow: 0 4px 25px rgba(217, 120, 145, 0.8); }
+#quoteText { color: #fdf2f2; font-family: Georgia, serif; font-size: clamp(1.8rem, 5vw, 3.5rem); text-align: center; max-width: 90%; font-style: italic; transform: scale(0.8); transition: transform 0.8s ease; text-shadow: 0 4px 25px rgba(217, 120, 145, 0.8); padding: 0 15px; line-height: 1.4; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px;}
 #quotePopup.active #quoteText { transform: scale(1); }
 
 
@@ -1247,7 +1246,7 @@ function triggerIntroGrandVisual() {
 
     // 3. Massive Confetti Rain
     const symbols = ['🎉','✨','💖','🎂','🌟', '🎈', '🎊', '🎀'];
-    for(let i=0; i<120; i++) {
+    for(let i=0; i<15; i++) {
         setTimeout(() => {
             let c = document.createElement('span');
             c.className = 'confetti-intro';
@@ -1263,7 +1262,7 @@ function triggerIntroGrandVisual() {
     }
     
     // 4. Fireworks Blasts
-    for(let i=0; i<25; i++) {
+    for(let i=0; i<8; i++) {
         setTimeout(() => {
             let fw = document.createElement('div');
             fw.className = 'firework';
@@ -1277,7 +1276,7 @@ function triggerIntroGrandVisual() {
     }
 
     // 5. Floating Balloons & Hearts
-    for(let i=0; i<40; i++) {
+    for(let i=0; i<15; i++) {
         setTimeout(() => {
             let f = document.createElement('span');
             f.className = 'wedding-float';
@@ -1500,7 +1499,7 @@ function triggerWedding() {
         }, Math.random() * 3000);
     }
     
-    for(let i=0; i<40; i++) {
+    for(let i=0; i<15; i++) {
         setTimeout(() => {
             let f = document.createElement('span');
             f.className = 'wedding-float';
@@ -1693,7 +1692,7 @@ function triggerMakeouts() {
     let overlay = document.createElement('div');
     overlay.className = 'spicy-overlay';
     document.body.appendChild(overlay);
-    for(let i=0; i<25; i++) {
+    for(let i=0; i<8; i++) {
         let mhm = document.createElement('div');
         mhm.className = 'mhm-text';
         let mCount = Math.floor(Math.random() * 12) + 4; 
@@ -2332,7 +2331,7 @@ function turnPage(dir) {
     const overlay = document.getElementById('quotePopup');
     const textEl = document.getElementById('quoteText');
     
-    textEl.innerText = flipQuotes[quoteIndex % flipQuotes.length];
+    textEl.innerHTML = flipQuotes[quoteIndex % flipQuotes.length];
     quoteIndex++;
     
     if(navigator.vibrate) navigator.vibrate(50);
