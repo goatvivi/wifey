@@ -7,7 +7,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
 <title>For Vaishnavi ♡</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Pacifico&family=Dancing+Script:wght@600&family=Satisfy&display=swap');
 
 :root{--cream:#fff8f1;--pink:#f7dce2;--rose:#d97891;--deep:#8e435b;--ink:#583c45;--muted:#987c82;--white:#fffdfb;--shadow:0 16px 45px #9b53651a}
 *{box-sizing:border-box}html,body{overflow-x:hidden;width:100%;max-width:100%;box-sizing:border-box;}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65;}
@@ -679,6 +679,58 @@ h1, h2 {
 .footer-petal { position: fixed; top: -10vh; font-size: 25px; pointer-events: none; z-index: 9999999; animation: petalFall linear forwards; }
 @keyframes petalFall { to { transform: translateY(120vh) rotate(720deg); } }
 
+
+
+/* POLAROID DROP CSS */
+.polaroid-drop-wrap { position: relative; width: 100%; height: 550px; background: #fffcfb; border: 1px dashed #f0e0df; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; align-items: center; box-shadow: inset 0 0 20px rgba(0,0,0,0.02); margin: 0 auto; max-width: 450px;}
+.drop-btn { margin-top: 25px; z-index: 10; font-weight: bold; background: linear-gradient(135deg, #d97891, #8e435b); color: white; padding: 12px 25px; border-radius: 30px; border: none; box-shadow: 0 4px 15px rgba(217, 120, 145, 0.4); cursor: pointer; transition: transform 0.2s;}
+.drop-btn:active { transform: scale(0.95); }
+.dropped-polaroid { position: absolute; width: 150px; background: #fffdf9; padding: 10px 10px 30px 10px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); border: 1px solid #f0e0df; top: -250px; transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), top 0.8s cubic-bezier(0.25, 1, 0.5, 1); z-index: 5; border-radius: 4px; pointer-events:none;}
+.dropped-polaroid img { width: 100%; height: 130px; object-fit: cover; background: #f4d9df; border: 1px solid #f0e0df;}
+.dropped-polaroid-caption { font-family: 'Caveat', cursive; font-size: 1.3rem; color: #8e435b; text-align: center; margin-top: 8px; line-height: 1; font-weight: bold;}
+
+/* LIVE TYPING CSS */
+.live-typing-wrap { background: #fffdf9; border: 1px solid #f0e0df; border-radius: 20px; max-width: 400px; margin: 0 auto; padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 15px; position: relative; }
+.live-typing-header { display: flex; align-items: center; gap: 10px; border-bottom: 1px dashed #f0e0df; padding-bottom: 15px; margin-bottom: 5px; }
+.live-typing-avatar { width: 45px; height: 45px; background: linear-gradient(135deg, #d97891, #8e435b); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; }
+.live-typing-status { font-family: -apple-system, sans-serif; font-size: 12px; color: #d97891; font-weight: 600; animation: blinkStatus 1.5s infinite; }
+@keyframes blinkStatus { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.live-typing-bubble { background: #f4d9df; color: var(--ink); padding: 12px 18px; border-radius: 20px; border-bottom-left-radius: 4px; font-family: -apple-system, sans-serif; font-size: 15px; line-height: 1.4; align-self: flex-start; max-width: 90%; min-height: 45px; position: relative; }
+.live-typing-cursor { display: inline-block; width: 2px; height: 16px; background: var(--deep); vertical-align: middle; margin-left: 2px; animation: blinkCursor 0.8s infinite; }
+@keyframes blinkCursor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* 3D UNIVERSE CSS */
+.universe-wrap { position: relative; width: 100%; max-width: 500px; height: 350px; border-radius: 20px; overflow: hidden; margin: 0 auto; background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e); box-shadow: inset 0 0 50px rgba(0,0,0,0.8), 0 20px 40px rgba(0,0,0,0.5); perspective: 800px; }
+.universe-layer { position: absolute; inset: -50px; background-size: cover; background-position: center; transition: transform 0.1s ease-out; pointer-events: none;}
+.universe-layer-1 { background-image: radial-gradient(2px 2px at 40px 60px, #fff, rgba(0,0,0,0)), radial-gradient(2px 2px at 20px 50px, rgba(255,255,255,0.8), rgba(0,0,0,0)), radial-gradient(2px 2px at 30px 100px, rgba(255,255,255,0.9), rgba(0,0,0,0)), radial-gradient(2px 2px at 40px 60px, rgba(255,255,255,1), rgba(0,0,0,0)), radial-gradient(2px 2px at 110px 90px, rgba(255,255,255,0.7), rgba(0,0,0,0)), radial-gradient(2px 2px at 190px 150px, rgba(255,255,255,0.6), rgba(0,0,0,0)); background-repeat: repeat; background-size: 200px 200px; }
+.universe-layer-2 { background-image: radial-gradient(3px 3px at 50px 160px, #ffb3c6, rgba(0,0,0,0)), radial-gradient(2px 2px at 90px 40px, #a8c0ff, rgba(0,0,0,0)), radial-gradient(3px 3px at 130px 80px, #fff, rgba(0,0,0,0)); background-repeat: repeat; background-size: 300px 300px; filter: drop-shadow(0 0 6px #fff); }
+.universe-layer-3 { background-image: radial-gradient(4px 4px at 150px 200px, #facc15, rgba(0,0,0,0)), radial-gradient(4px 4px at 200px 50px, #fff, rgba(0,0,0,0)); background-repeat: repeat; background-size: 400px 400px; filter: drop-shadow(0 0 10px #facc15); }
+.universe-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: 'Great Vibes', cursive; font-size: 3.5rem; text-shadow: 0 0 20px rgba(255,255,255,0.8); z-index: 10; pointer-events: none;}
+
+/* RUB TO WARM CSS */
+.warmth-wrap { background: #fffcfb; border-radius: 20px; padding: 40px 20px; max-width: 350px; margin: 0 auto; box-shadow: var(--shadow); border: 1px dashed #f0e0df; position: relative; overflow: hidden; touch-action: none;}
+.thermometer-bg { width: 40px; height: 150px; background: #e2e8f0; border-radius: 20px; margin: 0 auto; position: relative; border: 2px solid #cbd5e1; box-shadow: inset 0 5px 10px rgba(0,0,0,0.1); overflow: hidden; pointer-events: none;}
+.thermometer-fill { position: absolute; bottom: 0; left: 0; width: 100%; height: 5%; background: linear-gradient(to top, #3b82f6, #60a5fa); transition: height 0.1s ease, background 0.5s ease; pointer-events: none;}
+.thermometer-bulb { width: 60px; height: 60px; background: #3b82f6; border-radius: 50%; margin: -20px auto 0 auto; border: 2px solid #cbd5e1; box-shadow: inset -5px -5px 15px rgba(0,0,0,0.2); transition: background 0.5s ease; position: relative; z-index: 2; pointer-events: none;}
+.warmth-hint { font-size: 13px; color: var(--muted); margin-top: 25px; animation: gentlePulse 2s infinite; font-weight: bold;}
+.warmth-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(255,253,249,0.95); z-index: 10; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; flex-direction: column; font-family: Georgia, serif;}
+.warmth-overlay.active { opacity: 1; pointer-events: auto; }
+
+/* INFINITE RIBBON CSS */
+.ribbon-wrap { background: #fdf6f7; border-radius: 20px; padding: 40px 20px; max-width: 350px; margin: 0 auto; box-shadow: inset 0 0 30px rgba(217,120,145,0.1), var(--shadow); border: 1px solid #f0e0df; position: relative; overflow: hidden; height: 350px; touch-action: none;}
+.gift-box { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 5rem; z-index: 5; pointer-events: none; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1)); }
+.ribbon-line { position: absolute; bottom: 85px; left: 50%; transform: translateX(-50%); width: 15px; height: 0; background: linear-gradient(to top, #d97891, #f4d9df); z-index: 2; pointer-events: none;}
+.ribbon-note { position: absolute; left: 50%; transform: translateX(-50%) translateY(0) rotate(0deg); background: #fffcfb; border: 1px solid #f0e0df; padding: 15px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 80%; text-align: center; font-family: 'Caveat', cursive; font-size: 1.6rem; color: var(--deep); opacity: 0; transition: transform 0.5s ease, opacity 0.3s ease; z-index: 3;}
+.ribbon-hint { position: absolute; top: 30px; width: 100%; text-align: center; color: var(--rose); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; animation: pulseGlow 2s infinite; pointer-events: none;}
+
+
+.nickname-item {
+    color: #8e435b;
+    text-shadow: 0 4px 15px rgba(142,67,91,0.2);
+    display: inline-block;
+    margin: 0 6px;
+}
+
 </style>
 
 </head>
@@ -715,10 +767,8 @@ h1, h2 {
     <div style="font-size: 4rem; filter: drop-shadow(0 0 25px rgba(249,168,212,0.8)); animation: gentlePulse 3s infinite; margin-bottom: 25px;">✨</div>
     <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 30px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.15); text-align: center; max-width: 85%; width: 340px; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
         <h3 style="margin: 0 0 10px 0; font-family: Georgia, serif; font-size: 1.4rem; color: #fff;">For Vaishnavi Only</h3>
-        <p style="font-family: -apple-system, sans-serif; font-size: 13px; color: #cbd5e1; margin-bottom: 25px; line-height: 1.4;">To enter, verify the exact date our story began.</p>
-        <input type="text" id="gatePass" placeholder="DD/MM/YYYY" style="width: 100%; padding: 14px; border-radius: 12px; border: none; text-align: center; font-size: 16px; margin-bottom: 18px; background: rgba(255,255,255,0.9); outline: none; box-shadow: inset 0 2px 5px rgba(0,0,0,0.2); font-family: monospace; font-weight: bold; letter-spacing: 2px;">
-        <button onclick="checkPass()" style="background: linear-gradient(135deg, #d97891, #8e435b); color: white; border: none; padding: 14px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 5px 15px rgba(217, 120, 145, 0.4); font-size: 15px; letter-spacing: 0.5px;">Unlock My Universe</button>
-        <p id="gateError" style="color: #ffb3c6; font-size: 12px; margin-top: 15px; display: none; font-style: italic; font-family: Georgia, serif;">Hint: It was exactly one year ago today.</p>
+        <p style="font-family: -apple-system, sans-serif; font-size: 13px; color: #cbd5e1; margin-bottom: 25px; line-height: 1.4;">A little universe made just for you.</p>
+        <button onclick="unlockSite()" style="background: linear-gradient(135deg, #d97891, #8e435b); color: white; border: none; padding: 14px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 5px 15px rgba(217, 120, 145, 0.4); font-size: 15px; letter-spacing: 0.5px;">Enter My Universe</button>
     </div>
 </div>
 
@@ -799,7 +849,7 @@ h1, h2 {
 const SITE = {
   herName: "Vaishnavi",
   yourName: "Roshan",
-  nicknames: ["Jaanu", "Aashi", "Darling", "Hottie", "Wifey", "Honey"],
+  nicknames: ["Jaanu", "Aashi", "Darling", "Hottie", "Wifey", "Honey", "Cutie", "Princess", "Mine", "Love", "Vivi", "bby", "mommy", "sweetie"],
   birthday: "2026-12-01T00:00:00",
   intro: "A little universe made just for you.",
   personalMessage: `HAPPY BIRTHDAY TO MY FAVOURITE HUMAN BEINGGGGG!!! ❤️
@@ -890,7 +940,7 @@ MWWWWWWWWAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 <header class="hero" id="home"><div class="hero-inner wrap">
 <div class="date-pill">1 DECEMBER</div>
 <h1><span id="timeGreeting" style="font-size: 0.6em; display:block; margin-bottom: -15px; color: var(--deep);">Happy Birthday,</span><br><span class="heart" id="heroName">Vaishnavi</span></h1>
-<div class="jaanu-anim">jaanu</div>
+<div id="heroNicknames" style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; margin-top:-10px; margin-bottom:25px; padding: 0 15px;"></div>
 <div class="love-container"><div class="sparkle delay">✨</div><div class="beating-heart">💖</div><div class="sparkle">✨</div></div>
 <button class="btn" onclick="document.querySelector('#surprises').scrollIntoView({behavior:'smooth'});hearts()">A little surprise awaits ♡</button>
 </div></header>
@@ -999,6 +1049,15 @@ MWWWWWWWWAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
     </div>
 </div></section>
 
+
+<!-- POLAROID DROP -->
+<section id="polaroidSection" style="background:#fff2ef; padding:80px 0; border-top: 1px dashed #f0e0df;"><div class="wrap center">
+    <div class="section-head"><div class="eyebrow">Scrapbook</div><h2>Drop a Memory.</h2><p class="muted">Tap to build our polaroid pile.</p></div>
+    <div class="polaroid-drop-wrap" id="polaroidWrap">
+        <button class="drop-btn" onclick="dropPolaroid()">Drop a Memory 📸</button>
+    </div>
+</div></section>
+
 <section id="letter"><div class="wrap"><div class="section-head"><div class="eyebrow">A letter for you</div><h2>To my favourite person.</h2></div>
   <article class="letter" id="secretLetter" style="display:block; text-align:center;">
     <p style="text-align:left;">My dearest <span id="letterName">Vaishnavi</span>,</p>
@@ -1092,6 +1151,36 @@ MWWWWWWWWAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
     </div>
 </div></section>
 
+
+<!-- LIVE TYPING -->
+<section id="typingSection" style="background:#fffcfb; padding:80px 0; border-top: 1px dashed #f0e0df;"><div class="wrap center">
+    <div class="section-head"><div class="eyebrow">Butterflies</div><h2>Live Thoughts.</h2><p class="muted">Watching him type...</p></div>
+    
+    <div class="live-typing-wrap" id="typingWrap" onclick="startLiveTyping()">
+        <div class="live-typing-header">
+            <div class="live-typing-avatar">R</div>
+            <div style="text-align: left;">
+                <div style="font-family: -apple-system, sans-serif; font-weight: 600; font-size: 15px; color: var(--ink);">Roshan ❤️</div>
+                <div class="live-typing-status" id="typeStatus">Tap to see message</div>
+            </div>
+        </div>
+        <div class="live-typing-bubble" id="typeBubble" style="display:none;">
+            <span id="typeContent"></span><span class="live-typing-cursor" id="typeCursor"></span>
+        </div>
+    </div>
+</div></section>
+
+<!-- INFINITE RIBBON -->
+<section id="ribbonSection" style="background:#fff2ef; padding:80px 0; border-top: 1px dashed #f0e0df;"><div class="wrap center">
+    <div class="section-head"><div class="eyebrow">Endless</div><h2>Infinite Love Ribbon.</h2><p class="muted">Keep pulling the ribbon out of the box.</p></div>
+    
+    <div class="ribbon-wrap" id="ribWrap">
+        <div class="ribbon-hint" id="ribHint">Swipe UP repeatedly ↑</div>
+        <div class="ribbon-line" id="ribLine"></div>
+        <div class="gift-box">🎁</div>
+    </div>
+</div></section>
+
 <!-- Same Moon Map -->
 <section id="moonMap" style="background: linear-gradient(135deg, #1e112a 0%, #301934 100%) !important; color:#e2e8f0; padding:80px 0 120px 0; overflow:hidden;"><div class="wrap center">
     <div id="secretMoon" style="font-size: 5rem; text-shadow: 0 0 30px rgba(255,255,255,0.8); animation: twinkle 4s infinite alternate; margin-bottom: 10px; cursor: pointer; user-select: none;">🌕</div>
@@ -1163,7 +1252,7 @@ MWWWWWWWWAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
     </div>
   </div>
   
-  <p class="edit-hint" id="nicknames" style="margin-top:40px;"></p>
+  
 <p onclick="triggerFooterEasterEgg()" style="font-size: 11px; color: var(--muted); margin-top: 60px; cursor: pointer; text-align: center; animation: faintPulse 4s infinite;">A tiny website, with a very big amount of love. ♡</p>
 </div></section>
 </main>
@@ -1203,7 +1292,20 @@ function render(){
  $('finalMessage').textContent=data.finalMessage;
 
  $('introLetterTextContainer').innerHTML = esc(data.personalMessage).replace(/\n/g, '<br>').replace('UNIVERSE', '<span class="secret-word" onclick="showSecret(event)">UNIVERSE</span>') || "You haven't written a letter yet! Go to the editor at the bottom of the page to add your special message.";
-$('nicknames').textContent=data.nicknames.join(' · ');
+
+    if($('heroNicknames')) {
+        const fonts = ["'Great Vibes', cursive", "'Pacifico', cursive", "'Dancing Script', cursive", "'Satisfy', cursive", "'Caveat', cursive", "Georgia, serif"];
+        const sizes = ["3.5rem", "1.8rem", "2.6rem", "2.2rem", "2.5rem", "1.6rem"];
+        let nHTML = '';
+        data.nicknames.forEach((n, i) => {
+            let f = fonts[i % fonts.length];
+            let s = sizes[i % sizes.length];
+            let delay = (i * 0.4) + "s"; // staggering the floating animation
+            nHTML += `<span class="nickname-item" style="font-family: ${f}; font-size: ${s}; animation: floatJaanu 3.5s ease-in-out infinite ${delay};">${esc(n).toLowerCase()}</span>`;
+        });
+        $('heroNicknames').innerHTML = nHTML;
+    }
+
  if(data.ambientSongUrl) {
      let bgAudio = $('globalAmbient');
      if(bgAudio.src !== data.ambientSongUrl) {
@@ -1427,7 +1529,7 @@ function enterMainSite() {
     }, 1500);
 }
 
-const startDate = new Date("2025-12-01T00:00:00").getTime();
+const startDate = new Date("2025-12-01T18:55:00").getTime();
 setInterval(() => {
     const now = new Date().getTime();
     const distance = now - startDate;
@@ -2532,62 +2634,9 @@ function setTimeGreeting() {
 setTimeGreeting();
 
 /* PASSWORD GATE LOGIC */
-function checkPass() {
-    let val = $('gatePass').value.trim();
-    if (val === '01/12/2025' || val === '1/12/2025' || val === '01-12-2025' || val === '1-12-2025') {
-        runDecryptSequence();
-    } else {
-        $('gateError').style.display = 'block';
-        if(navigator.vibrate) navigator.vibrate([50, 50, 50]);
-        let gateBox = $('gate').querySelector('div:nth-child(2)');
-        gateBox.style.transform = 'translateX(-10px)';
-        setTimeout(()=>gateBox.style.transform = 'translateX(10px)', 100);
-        setTimeout(()=>gateBox.style.transform = 'translateX(-10px)', 200);
-        setTimeout(()=>gateBox.style.transform = 'translateX(0)', 300);
-    }
-}
 
-function runDecryptSequence() {
-    let ci = $('cinematicIntro');
-    if(ci) ci.style.display = 'none';
-    
-    let gateBox = $('gate').querySelector('div:nth-child(2)');
-    let stars = $('gate').querySelector('div:nth-child(1)');
-    if(gateBox) gateBox.style.opacity = '0';
-    if(stars) stars.style.opacity = '0';
-    
-    let dScreen = document.createElement('div');
-    dScreen.id = 'decryptScreen';
-    dScreen.innerHTML = '<div id="dText" class="decrypt-text"></div>';
-    document.body.appendChild(dScreen);
-    
-    let dText = document.getElementById('dText');
-    
-    const showMsg = (msg, delay) => {
-        return new Promise(res => {
-            setTimeout(() => {
-                dText.style.opacity = '0';
-                setTimeout(() => {
-                    dText.innerHTML = msg;
-                    dText.style.opacity = '1';
-                    if(navigator.vibrate) navigator.vibrate(30);
-                }, 300);
-                setTimeout(res, delay);
-            }, 100);
-        });
-    };
 
-    showMsg('> PASSWORD ACCEPTED.', 1500)
-    .then(() => showMsg('> LOADING 365 DAYS OF MEMORIES...', 1800))
-    .then(() => showMsg('> UNLOCKING ROSHAN\'S HEART...', 1800))
-    .then(() => {
-        dScreen.style.opacity = '0';
-        setTimeout(() => {
-            dScreen.remove();
-            unlockSite();
-        }, 800);
-    });
-}
+
 
 
 
@@ -2698,6 +2747,304 @@ document.addEventListener('touchmove', e => {
 }, {passive: true});
 
 
+
+/* LIVE TYPING LOGIC */
+const typeScript = [
+    { text: "Hey jaanu...", type: "type" },
+    { text: " ", type: "pause", duration: 1000 },
+    { text: 12, type: "delete" },
+    { text: "I just wanted to say that you look really cute today", type: "type" },
+    { text: " ", type: "pause", duration: 1200 },
+    { text: 17, type: "delete" }, // Exactly deletes "really cute today"
+    { text: " ", type: "pause", duration: 500 },
+    { text: "gorgeous today.", type: "type" },
+    { text: " ", type: "pause", duration: 1500 },
+    { text: 20, type: "delete" }, // Exactly deletes "look gorgeous today."
+    { text: " ", type: "pause", duration: 600 },
+    { text: "are the absolute best thing that has ever happened to me.", type: "type" },
+    { text: " ", type: "pause", duration: 800 },
+    { text: " I love you so much. ❤️", type: "type" }
+];
+let isTypingActive = false;
+
+async function startLiveTyping() {
+    if(isTypingActive) return;
+    isTypingActive = true;
+    $('typeStatus').innerText = 'typing...';
+    $('typeStatus').style.color = '#3b82f6'; // iMessage blue
+    $('typeBubble').style.display = 'block';
+    
+    let content = $('typeContent');
+    content.innerText = '';
+    
+    for(let step of typeScript) {
+        if(step.type === 'pause') {
+            await new Promise(r => setTimeout(r, step.duration));
+        } 
+        else if (step.type === 'delete') {
+            for(let i=0; i<step.text; i++) {
+                content.innerText = content.innerText.slice(0, -1);
+                if(navigator.vibrate) navigator.vibrate(10);
+                await new Promise(r => setTimeout(r, 40));
+            }
+        }
+        else if (step.type === 'type') {
+            for(let char of step.text) {
+                content.innerText += char;
+                if(navigator.vibrate) navigator.vibrate(15);
+                // Randomize typing speed slightly for realism
+                await new Promise(r => setTimeout(r, 40 + Math.random()*60));
+            }
+        }
+    }
+    
+    $('typeStatus').innerText = 'Read';
+    $('typeStatus').style.color = '#94a3b8';
+    $('typeStatus').style.animation = 'none';
+    $('typeCursor').style.display = 'none';
+}
+
+
+/* 3D UNIVERSE GYROSCOPE LOGIC */
+const uWrap = $('uWrap');
+if(uWrap && window.DeviceOrientationEvent) {
+    let u1 = $('uLayer1'), u2 = $('uLayer2'), u3 = $('uLayer3');
+    window.addEventListener('deviceorientation', (e) => {
+        // Gamma is left/right tilt (-90 to 90), Beta is front/back tilt (-180 to 180)
+        let x = e.gamma; 
+        let y = e.beta;
+        
+        // Clamp values for safety
+        if(x > 45) x = 45; if(x < -45) x = -45;
+        if(y > 90) y = 90; if(y < 0) y = 0;
+        y = y - 45; // center it
+        
+        // If device has no gyro (desktop), this won't trigger aggressively
+        if(x !== null && y !== null) {
+            u1.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            u2.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
+            u3.style.transform = `translate(${x * 1}px, ${y * 1}px)`;
+        }
+    });
+    
+    // Fallback for Desktop Mouse Move
+    uWrap.addEventListener('mousemove', (e) => {
+        const rect = uWrap.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 45; 
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 45;
+        u1.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        u2.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
+        u3.style.transform = `translate(${x * 1}px, ${y * 1}px)`;
+    });
+}
+
+
+/* RUB TO WARM LOGIC */
+const warmWrap = $('warmWrap');
+let warmthLevel = 5;
+let warmDecayTimer;
+
+if(warmWrap) {
+    const thermFill = $('thermFill');
+    const thermBulb = $('thermBulb');
+    const updateTherm = () => {
+        if(warmthLevel > 100) warmthLevel = 100;
+        if(warmthLevel < 5) warmthLevel = 5;
+        
+        thermFill.style.height = warmthLevel + '%';
+        
+        // Color shifts from cold blue to warm red based on percentage
+        if(warmthLevel < 30) {
+            thermFill.style.background = 'linear-gradient(to top, #3b82f6, #60a5fa)';
+            thermBulb.style.background = '#3b82f6';
+        } else if (warmthLevel < 70) {
+            thermFill.style.background = 'linear-gradient(to top, #d946ef, #f472b6)';
+            thermBulb.style.background = '#d946ef';
+        } else {
+            thermFill.style.background = 'linear-gradient(to top, #ef4444, #f87171)';
+            thermBulb.style.background = '#ef4444';
+        }
+        
+        if(warmthLevel === 100) {
+            $('warmOverlay').classList.add('active');
+            $('warmHint').style.opacity = '0';
+            if(navigator.vibrate) navigator.vibrate([100, 50, 200, 50, 300]);
+            hearts();
+        }
+    };
+    
+    // Decay warmth over time if not rubbing
+    setInterval(() => {
+        if(warmthLevel > 5 && warmthLevel < 100) {
+            warmthLevel -= 2;
+            updateTherm();
+        }
+    }, 200);
+
+    const rubAction = (e) => {
+        e.preventDefault();
+        if(warmthLevel >= 100) return;
+        warmthLevel += 3; // Increase per move
+        if(navigator.vibrate && Math.random() > 0.7) navigator.vibrate(10); // subtle friction feedback
+        updateTherm();
+    };
+
+    warmWrap.addEventListener('touchmove', rubAction, {passive: false});
+    warmWrap.addEventListener('mousemove', (e) => { if(e.buttons === 1) rubAction(e); }); // Requires click-and-drag on desktop
+}
+
+
+/* INFINITE RIBBON LOGIC */
+const ribWrap = $('ribWrap');
+let pulledHeight = 0;
+let noteIndex = 0;
+let lastNoteIndex = -1;
+const ribNotes = [
+    "You're gorgeous", "Jaanu ♡", "My favourite place", "I miss you",
+    "Best girlfriend ever", "You complete me", "I love your smile",
+    "My entire universe", "Forever Wifey 💍", "I love your eyes",
+    "You make me so happy", "Cutest girl alive", "My absolute everything",
+    "Can't stop thinking of u", "You have my whole heart", "My perfect girl",
+    "I'm so lucky to have you", "You're my safe place", "I love your laugh",
+    "You mean the world to me", "My sunshine", "I adore you", "You're my dream come true",
+    "I love every part of you", "My sweet Jaanu", "Can't wait to hold you",
+    "You're my forever", "My beautiful Aashi", "I love you more each day",
+    "You give me butterflies", "My one and only", "Prettiest girl in the world",
+    "You are my home", "My future wife", "So proud of you", "I love your voice",
+    "Can't wait to marry you", "Pune to Nalkheda", "Distance means nothing", 
+    "I love you 3000", "You're my soulmate", "Rovika's mommy", "Rovansh's mom 🥰", 
+    "My heart beats for you", "You are my oxygen", "My favorite notification", 
+    "Can't wait to cuddle", "Just thinking about you", "My today & all tomorrows", 
+    "To the moon and back", "You're my angel", "Perfect from head to toe", 
+    "My biggest blessing", "You're my happy place", "I cherish you", 
+    "You make me a better man", "My sweet addiction", "You're a masterpiece", 
+    "My precious Jaanu", "My daily happiness", "I'll never let you go", 
+    "The reason I smile", "My dream girl", "My sweet Aashi", 
+    "I'm crazy about you", "My endless love", "My heart is yours", 
+    "Just you and me", "Unconditionally yours", "You're my magic", 
+    "Everything I ever wanted", "My cutie pie", "My lucky charm", 
+    "You are my destiny", "I love you endlessly", "You light up my life", 
+    "My better half", "Obsessed with you", "You're my peace", 
+    "Always on my mind", "My favorite addiction", "You make everything better", 
+    "I love your weirdness", "My gorgeous wifey", "You're my rock", 
+    "My beautiful reality", "Irreplaceable", "Past the stars ✨", 
+    "My sweetest hello", "My hardest goodbye", "You're my everything", 
+    "My favorite distraction", "Completely yours", "My forever valentine", 
+    "I need you", "My favorite person", "My sweet love", 
+    "You are my endgame", "I'll love you forever", "Happy 17th Birthday Jaanu!"
+];
+
+if(ribWrap) {
+    let startY = 0;
+    
+    const startPull = (e) => {
+        startY = e.touches ? e.touches[0].clientY : e.clientY;
+        $('ribHint').style.opacity = '0';
+    };
+    
+    const movePull = (e) => {
+        if(startY === 0) return;
+        e.preventDefault();
+        let currentY = e.touches ? e.touches[0].clientY : e.clientY;
+        let diff = startY - currentY; // Moving UP is positive diff
+        
+        if(diff > 0) {
+            pulledHeight += (diff * 0.5); // Add to ribbon
+            startY = currentY; // Reset for continuous pull
+            
+            $('ribLine').style.height = pulledHeight + 'px';
+            
+            // Spawn a note every 120px of ribbon to make it feel faster and more endless
+            if(pulledHeight > 120) {
+                pulledHeight = 0; // Reset visual line, but keep pulling
+                spawnNote();
+            }
+        }
+    };
+    
+    const stopPull = () => { startY = 0; };
+    
+    ribWrap.addEventListener('touchstart', startPull, {passive:false});
+    ribWrap.addEventListener('touchmove', movePull, {passive:false});
+    ribWrap.addEventListener('touchend', stopPull);
+    ribWrap.addEventListener('mousedown', startPull);
+    ribWrap.addEventListener('mousemove', (e) => { if(e.buttons === 1) movePull(e); });
+    ribWrap.addEventListener('mouseup', stopPull);
+    ribWrap.addEventListener('mouseleave', stopPull);
+    
+    function spawnNote() {
+        if(navigator.vibrate) navigator.vibrate(25);
+        
+        let nextIndex = Math.floor(Math.random() * ribNotes.length);
+        while(nextIndex === lastNoteIndex) {
+            nextIndex = Math.floor(Math.random() * ribNotes.length);
+        }
+        lastNoteIndex = nextIndex;
+        
+        let note = document.createElement('div');
+        note.className = 'ribbon-note';
+        note.innerText = ribNotes[nextIndex];
+        
+        // Random slight rotation
+        let rot = (Math.random() * 14) - 7;
+        note.style.bottom = '85px'; 
+        
+        ribWrap.appendChild(note);
+        
+        // Animate upwards
+        setTimeout(() => {
+            note.style.opacity = '1';
+            note.style.transform = `translateX(-50%) translateY(-220px) rotate(${rot}deg)`;
+        }, 50);
+        
+        // Remove after it floats up
+        setTimeout(() => {
+            note.style.opacity = '0';
+            setTimeout(() => note.remove(), 300);
+        }, 1500);
+    }
+}
+
+
+let droppedCount = 0;
+function dropPolaroid() {
+    if(droppedCount >= SITE.photos.length) {
+        if(navigator.vibrate) navigator.vibrate([30, 30, 30]);
+        let btn = document.querySelector('.drop-btn');
+        if(btn) btn.innerText = "Pile is full! ❤️";
+        return;
+    }
+    if(navigator.vibrate) navigator.vibrate(20);
+    let wrap = $('polaroidWrap');
+    let p = document.createElement('div');
+    p.className = 'dropped-polaroid';
+    
+    let photoData = SITE.photos[droppedCount];
+    let shortCaption = (photoData.caption || '').substring(0, 20);
+    if((photoData.caption || '').length > 20) shortCaption += '...';
+    
+    p.innerHTML = `<img src="${photoData.url}" alt="Memory"><div class="dropped-polaroid-caption">${esc(shortCaption)}</div>`;
+    
+    let rot = (Math.random() * 50) - 25; // -25 to 25 deg
+    let left = (Math.random() * 50) + 15; // 15% to 65% width
+    
+    p.style.left = left + '%';
+    p.style.transform = `rotate(${rot}deg) scale(0.9)`;
+    p.style.zIndex = 5 + droppedCount; // ensure newer ones are on top
+    
+    wrap.appendChild(p);
+    
+    // Trigger reflow
+    void p.offsetWidth;
+    
+    // Drop target 
+    let baseTop = 90;
+    p.style.top = (baseTop + (Math.random() * 60) + (droppedCount * 15)) + 'px';
+    p.style.transform = `rotate(${rot}deg) scale(1)`; // scale up slightly as it drops
+    
+    droppedCount++;
+}
+
 /* LIVE HANDWRITING REVEAL */
 let letterRevealed = false;
 function checkLetterReveal(pageIndex) {
@@ -2766,7 +3113,7 @@ const flipQuotes = [
     "You are my sunshine."
 ];
 let currentBookPage = 0;
-const totalPages = 11;
+let totalPages = 13;
 let quoteIndex = 0;
 
 function turnPage(dir) {
@@ -2847,11 +3194,12 @@ document.addEventListener("DOMContentLoaded", () => {
         [s_memories, s_slider],
         [s_chat],
         [s_airplane, s_pinata],
-        [s_gallery],
+        [s_gallery, document.getElementById('polaroidSection')],
         [s_letter, s_songs],
         [s_surprises, s_handhold],
         [s_scanner, s_constellation],
         [s_reasons],
+        [document.getElementById('typingSection'), document.getElementById('ribbonSection')],
         [s_melt, s_moonMap],
         [s_wish, s_interaction]
     ];
@@ -2859,6 +3207,7 @@ document.addEventListener("DOMContentLoaded", () => {
     main.innerHTML = '';
     main.className = 'book-container';
     
+    totalPages = pagesData.length;
     pagesData.forEach((pageContent, idx) => {
         let pageDiv = document.createElement('div');
         pageDiv.className = 'book-page ' + (idx === 0 ? 'active' : 'flipped-right');
