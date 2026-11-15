@@ -1898,18 +1898,20 @@ function triggerMakeouts() {
     let overlay = document.createElement('div');
     overlay.className = 'spicy-overlay';
     document.body.appendChild(overlay);
-    for(let i=0; i<8; i++) {
+    // Increased from 8 to 50 to flood the screen
+    for(let i=0; i<50; i++) {
         let mhm = document.createElement('div');
         mhm.className = 'mhm-text';
-        let mCount = Math.floor(Math.random() * 12) + 4; 
+        // Make the mhmmmmms significantly longer
+        let mCount = Math.floor(Math.random() * 25) + 12; 
         mhm.innerText = "mh" + "m".repeat(mCount) + "....";
-        mhm.style.left = (Math.random() * 85) + 'vw';
-        mhm.style.top = (Math.random() * 85) + 'vh';
-        mhm.style.fontSize = (1.2 + Math.random() * 2.5) + 'rem';
-        mhm.style.animationDelay = (Math.random() * 1.5) + 's';
+        mhm.style.left = (Math.random() * 95 - 5) + 'vw'; // Spread wider
+        mhm.style.top = (Math.random() * 100 - 5) + 'vh'; // Spread taller
+        mhm.style.fontSize = (1.2 + Math.random() * 3) + 'rem'; // Slightly larger variance
+        mhm.style.animationDelay = (Math.random() * 2.5) + 's';
         overlay.appendChild(mhm);
     }
-    setTimeout(()=>overlay.remove(), 5000);
+    setTimeout(()=>overlay.remove(), 6500); // Give the massive flood time to clear
 }
 
 function triggerLanterns() {
