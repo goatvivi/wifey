@@ -284,26 +284,30 @@ body.theme-red { --cream: #2a1215; --pink: #3d1b20; --rose: #e66775; --deep: #cc
 .intro-phase.active { opacity: 1; pointer-events: auto; z-index: 2; transform: translateY(0); }
 .intro-phase.hidden-up { opacity: 0; transform: translateY(-50px); pointer-events: none; z-index: 0; }
 
-/* Intro Cake */
-.cake-stage { display: flex; justify-content: center; align-items: flex-end; margin-top: 30px; position: relative; height: 260px; touch-action: none; padding-bottom: 20px;}
-.cake { position: relative; width: 220px; display: flex; flex-direction: column; align-items: center; }
-.cake-tier { background: #fffdf9; border: 3px solid #f0e0df; box-shadow: inset -10px -10px 20px rgba(0,0,0,0.03), 0 10px 15px rgba(0,0,0,0.5); border-bottom: none; position: relative; }
-.tier-top { width: 110px; height: 50px; border-radius: 12px 12px 0 0; z-index: 3; border-bottom: 2px solid #f4d9df; }
-.tier-mid { width: 160px; height: 60px; border-radius: 12px 12px 0 0; z-index: 2; border-bottom: 2px solid #f4d9df; }
-.tier-bot { width: 210px; height: 70px; border-radius: 12px 12px 0 0; z-index: 1; border-bottom: 3px solid #f0e0df; }
-.icing { position: absolute; width: 100%; top: -3px; height: 16px; background: #f4d9df; border-radius: 10px; box-shadow: inset 0 -3px 5px rgba(0,0,0,0.05); }
-.c-row-1, .c-row-2, .c-row-3 { position: absolute; left: 50%; transform: translateX(-50%); display: flex; justify-content: space-between; }
-.c-row-1 { top: -35px; width: 85px; z-index: 6; }
-.c-row-2 { top: 15px; width: 140px; z-index: 5; }
-.c-row-3 { top: 75px; width: 190px; z-index: 4; }
-.candle { width: 11px; height: 40px; background: repeating-linear-gradient(45deg, #fff, #fff 4px, #d97891 4px, #d97891 8px); border-radius: 3px; position: relative; border: 1px solid #8e435b; }
-.flame { position: absolute; top: -20px; left: -1px; width: 12px; height: 18px; background: #facc15; border-radius: 50% 50% 20% 20%; box-shadow: 0 0 10px #facc15, 0 0 20px #f97316; animation: flicker 0.5s infinite alternate; transition: 0.3s; cursor: pointer; }
-.flame::after { content: ''; position: absolute; top: -15px; left: -20px; right: -20px; bottom: -20px; } 
-.candle.out .flame { opacity: 0; transform: scale(0); pointer-events: none;}
-.smoke { position: absolute; top: -25px; left: -3px; font-size: 16px; opacity: 0; transition: 0.1s; pointer-events: none;}
-.candle.out .smoke { animation: puff 1.2s forwards; }
-@keyframes flicker { 0% { transform: scale(1) rotate(-3deg); opacity: 0.9; } 100% { transform: scale(1.1) rotate(3deg); opacity: 1; } }
-@keyframes puff { 0% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-30px) scale(2); filter: blur(2px); } }
+/* ETHEREAL ALTAR (REPLACES CAKE) */
+.altar-stage { display: flex; justify-content: center; align-items: flex-end; margin-top: 40px; position: relative; height: 280px; touch-action: none; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto;}
+.altar-glass { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 280px; height: 60px; background: rgba(255,255,255,0.02); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); border-top: 1px solid rgba(255,255,255,0.3); border-radius: 50%; box-shadow: 0 25px 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(249,168,212,0.1); z-index: 1; }
+.altar-glow { position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 200px; height: 40px; background: #f9a8d4; filter: blur(40px); opacity: 0.4; z-index: 0; animation: gentlePulse 4s infinite alternate; pointer-events: none;}
+
+.candle-group { position: absolute; left: 50%; transform: translateX(-50%); display: flex; justify-content: space-between; align-items: flex-end; }
+.c-row-back { bottom: 45px; width: 210px; z-index: 2; filter: brightness(0.65); }
+.c-row-mid { bottom: 30px; width: 250px; z-index: 3; filter: brightness(0.85); }
+.c-row-front { bottom: 12px; width: 150px; z-index: 4; }
+
+.candle { width: 3px; background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.1)); border-radius: 3px; position: relative; box-shadow: 0 0 8px rgba(255,255,255,0.3); }
+.c-row-back .candle { height: 85px; }
+.c-row-mid .candle { height: 65px; }
+.c-row-front .candle { height: 50px; }
+
+.flame { position: absolute; top: -20px; left: -4px; width: 11px; height: 18px; background: #fff; border-radius: 50% 50% 20% 20%; box-shadow: 0 0 10px #fff, 0 -5px 15px #facc15, 0 -10px 25px #f97316, 0 -15px 35px #d97891; animation: etherealFlicker 0.4s infinite alternate; cursor: pointer; transition: 0.4s ease-out; }
+.flame::after { content: ''; position: absolute; inset: -30px; } 
+.candle.out .flame { opacity: 0; transform: scale(0) translateY(-20px); pointer-events: none; }
+
+.smoke { position: absolute; top: -30px; left: -4px; width: 10px; height: 10px; background: rgba(255,255,255,0.4); border-radius: 50%; opacity: 0; filter: blur(3px); pointer-events: none;}
+.candle.out .smoke { animation: magicSmoke 1.5s ease-out forwards; }
+
+@keyframes etherealFlicker { 0% { transform: scale(1) rotate(-3deg); opacity: 0.8; filter: brightness(1); } 100% { transform: scale(1.1) rotate(3deg); opacity: 1; filter: brightness(1.2); } }
+@keyframes magicSmoke { 0% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-50px) scale(4); } }
 .intro-banner { position: absolute; top: -120px; left: 50%; transform: translateX(-50%) scale(0.5); width: max-content; max-width: 95vw; padding: 20px 40px; background: linear-gradient(135deg, #d97891, #8e435b); color: white; border-radius: 50px; font-size: clamp(1.4rem, 5vw, 2.5rem); font-family: Georgia, serif; box-shadow: 0 15px 40px rgba(217, 120, 145, 0.5); opacity: 0; pointer-events: none; transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1); z-index: 10; font-weight: bold; text-align: center; border: 2px solid #f4d9df;}
 .intro-banner.show { top: -80px; opacity: 1; transform: translateX(-50%) scale(1); }
 
@@ -731,8 +735,129 @@ h1, h2 {
     margin: 0 6px;
 }
 
-</style>
 
+/* CINEMATIC INTRO ATMOSPHERE */
+@keyframes superSlowFade { 0% { opacity: 0; transform: translateY(10px); filter: blur(5px); } 100% { opacity: 1; transform: translateY(0); filter: blur(0); } }
+@keyframes tapPulse { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.05); } }
+
+/* THE SOUL FLAME */
+.soul-flame {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background: linear-gradient(to top, #fff 0%, #ffecd2 20%, #fcb69f 60%, transparent 100%);
+    border-radius: 50% 50% 30% 30% / 60% 60% 40% 40%;
+    box-shadow: 0 0 15px rgba(255, 236, 210, 0.8), 0 0 30px rgba(252, 182, 159, 0.6), 0 0 60px rgba(217, 120, 145, 0.4);
+    animation: breathFlame 3s ease-in-out infinite alternate;
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 3;
+    transform-origin: bottom center;
+}
+.soul-glow {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    background: radial-gradient(ellipse at center, rgba(217,120,145,0.4) 0%, rgba(142,67,91,0.1) 50%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: pulseGlowFlame 4s ease-in-out infinite alternate;
+    z-index: 1;
+    transition: opacity 1s;
+}
+.wick {
+    position: absolute;
+    bottom: 80px;
+    width: 2px;
+    height: 15px;
+    background: linear-gradient(to bottom, #fcb69f, #3a2029);
+    z-index: 2;
+    border-radius: 2px;
+    transition: opacity 1s;
+}
+@keyframes breathFlame {
+    0% { transform: scale(1) rotate(-2deg); filter: brightness(1); }
+    100% { transform: scale(1.1) rotate(2deg) translateY(-2px); filter: brightness(1.2); }
+}
+@keyframes pulseGlowFlame {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.3); opacity: 0.9; }
+}
+
+/* Extinguished State */
+.soul-flame.out { opacity: 0; transform: scale(0) translateY(-30px); filter: blur(10px); pointer-events: none;}
+.soul-glow.out { opacity: 0; }
+
+.magic-ember {
+    position: absolute;
+    border-radius: 50%;
+    background: #ffecd2;
+    pointer-events: none;
+    z-index: 5;
+}
+
+</style></style>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500;1,600&family=Parisienne&display=swap">
+<style id="openingUpgrade">
+/* ---- Opening typography: Parisienne (script) + Cormorant Garamond italic (voice) ---- */
+#cinematicText{font:italic 500 clamp(1.7rem,5.6vw,2.6rem)/1.35 'Cormorant Garamond',Georgia,serif;letter-spacing:.01em;color:#ffe9dc;text-shadow:0 0 24px rgba(255,190,160,.35)}
+#gate .gate-name{font:400 clamp(4.4rem,18vw,8.5rem)/1.05 'Parisienne','Great Vibes',cursive;letter-spacing:0;margin:0;color:#ffe9dc;background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;text-shadow:0 0 28px rgba(255,190,160,.35),0 0 70px rgba(217,120,145,.3);opacity:0;animation:superSlowFade 4s ease forwards .5s}
+#gate .gate-sub{font:italic 500 clamp(1.25rem,3.8vw,1.7rem)/1.3 'Cormorant Garamond',Georgia,serif;letter-spacing:.02em;margin:.3em 0 0;color:#e8bfc8;opacity:0;animation:superSlowFade 4s ease forwards 1.5s}
+#gate .gate-tap{position:absolute;bottom:14%;font:italic 500 1.1rem/1.2 'Cormorant Garamond',Georgia,serif;color:rgba(255,226,214,.74);opacity:0;animation:tapPulse 3s ease-in-out infinite 3s}
+
+/* ---- Cake scene ---- */
+#phaseCake{gap:clamp(.2rem,1.6vh,1rem)}
+.ck-head{text-align:center;position:relative;z-index:3}
+.ck-greet{font:italic 500 clamp(1.4rem,4.6vw,2rem)/1.2 'Cormorant Garamond',Georgia,serif;letter-spacing:.01em;color:#f3cdd3;margin:0}
+#introOverlay .ck-name{font:400 clamp(4rem,min(17vw,13vh),7.5rem)/1.05 'Parisienne','Great Vibes',cursive;letter-spacing:0;margin:0;color:#ffe6dc;background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;animation:none;text-shadow:0 0 22px rgba(255,170,150,.45),0 0 56px rgba(217,120,145,.45)}
+.ck-hint{font:italic 500 clamp(1.1rem,3.6vw,1.35rem)/1.4 'Cormorant Garamond',Georgia,serif;color:#e7c3cb;text-align:center;margin:0;padding:0 1.5rem;position:relative;z-index:3}
+.ck-stage{position:relative;width:min(88vw,360px,46vh);aspect-ratio:400/450;touch-action:none;z-index:2}
+.ck-svg{position:relative;z-index:1;display:block;width:100%;height:100%;overflow:visible}
+.ck-aura{position:absolute;left:50%;top:42%;width:150%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,170,110,.26),rgba(217,120,145,.12) 38%,transparent 68%);pointer-events:none;opacity:0}
+.ck-greet,#introOverlay .ck-name,.ck-hint,.ck-svg{opacity:0}
+.ck-fl,.ck-halo{opacity:0;transform-box:fill-box}
+.ck-fl{transform-origin:50% 100%}.ck-halo{transform-origin:50% 50%}
+.ck-light{transform-box:fill-box}
+.ck-smoke{stroke-dasharray:100;stroke-dashoffset:100;opacity:0}
+.ck-mono{font:400 30px 'Parisienne','Great Vibes',cursive;fill:#fff6ea}
+.ck-mote{opacity:0}
+#introOverlay.live .ck-svg{animation:ckRise 1.8s cubic-bezier(.2,.7,.2,1) .2s forwards}
+#introOverlay.live .ck-greet{animation:ckRise 1.6s ease 1.6s forwards}
+#introOverlay.live .ck-name{animation:ckRise 1.8s ease 2.1s forwards}
+#introOverlay.live .ck-hint{animation:ckRise 1.6s ease 3.6s forwards}
+#introOverlay.live .ck-aura{animation:ckFade 2s ease .6s forwards,ckBreath 4s ease-in-out 2.6s infinite alternate}
+#introOverlay.live .ck-fl{animation:ckIgnite .9s ease var(--d) forwards,ckFlick 2.2s ease-in-out calc(var(--d) + .9s) infinite alternate}
+#introOverlay.live .ck-halo{animation:ckIgnite .9s ease var(--d) forwards,ckBreath 3s ease-in-out calc(var(--d) + .9s) infinite alternate}
+#introOverlay.live .ck-light{animation:ckBreath 3.2s ease-in-out infinite alternate}
+#introOverlay.live .ck-mote{animation:ckMote 7s ease-in-out infinite}
+/* blown out */
+#introOverlay.blown .ck-fl{animation:ckBlow .8s ease forwards}
+#introOverlay.blown .ck-halo{animation:ckHaloOut .8s ease forwards}
+#introOverlay.blown .ck-smoke{animation:ckSmoke 2.6s ease-out .3s forwards}
+#introOverlay.blown .ck-light,#introOverlay.blown .ck-aura{animation:ckDim 1.4s ease forwards}
+#introOverlay.blown .ck-hint{animation:ckGone .8s ease forwards}
+@keyframes ckRise{from{opacity:0;transform:translateY(14px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes ckFade{to{opacity:1}}
+@keyframes ckBreath{from{opacity:.75}to{opacity:1}}
+@keyframes ckIgnite{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+@keyframes ckFlick{from{transform:scale(1,1) rotate(-2deg)}to{transform:scale(1.06,1.1) rotate(2.5deg)}}
+@keyframes ckBlow{0%{opacity:1;transform:scale(1) rotate(0)}35%{opacity:.9;transform:scale(.85,.7) rotate(26deg) translateX(3px)}100%{opacity:0;transform:scale(.2,0) rotate(40deg) translateX(8px)}}
+@keyframes ckHaloOut{to{opacity:0;transform:scale(.3)}}
+@keyframes ckSmoke{0%{stroke-dashoffset:100;opacity:0}15%{opacity:.7}100%{stroke-dashoffset:0;opacity:0;transform:translateY(-22px)}}
+@keyframes ckDim{from{opacity:1}to{opacity:0}}
+@keyframes ckGone{from{opacity:1}to{opacity:0}}
+@keyframes ckMote{0%{opacity:0;transform:translateY(0)}30%{opacity:.9}100%{opacity:0;transform:translateY(-44px)}}
+@media (prefers-reduced-motion:reduce){
+ #introOverlay.live .ck-fl,#introOverlay.live .ck-halo{animation:ckIgnite .4s ease forwards}
+ #introOverlay.live .ck-light,#introOverlay.live .ck-aura,#introOverlay.live .ck-mote{animation:none}
+ #introOverlay.live .ck-aura{opacity:1}
+}
+/* ---- Makeout: full-screen mhmmm ---- */
+.mhm-layer{position:fixed;inset:0;z-index:26;pointer-events:none;overflow:hidden}
+.mhm-layer .mhm-text{color:rgba(255,255,255,.92);text-shadow:0 0 14px rgba(255,40,80,.85),0 2px 8px rgba(120,0,20,.45)}
+</style>
 </head>
 <body>
 <div id="finaleOverlay"><div id="finaleText">I love you, Wifey. ❤️</div></div>
@@ -763,55 +888,81 @@ h1, h2 {
 <audio id="globalAmbient" loop playsinline preload="auto"></audio>
 
 
-<div id="gate">
-    <div style="font-size: 4rem; filter: drop-shadow(0 0 25px rgba(249,168,212,0.8)); animation: gentlePulse 3s infinite; margin-bottom: 25px;">✨</div>
-    <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 30px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.15); text-align: center; max-width: 85%; width: 340px; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
-        <h3 style="margin: 0 0 10px 0; font-family: Georgia, serif; font-size: 1.4rem; color: #fff;">For Vaishnavi Only</h3>
-        <p style="font-family: -apple-system, sans-serif; font-size: 13px; color: #cbd5e1; margin-bottom: 25px; line-height: 1.4;">A little universe made just for you.</p>
-        <button onclick="unlockSite()" style="background: linear-gradient(135deg, #d97891, #8e435b); color: white; border: none; padding: 14px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 5px 15px rgba(217, 120, 145, 0.4); font-size: 15px; letter-spacing: 0.5px;">Enter My Universe</button>
+<div id="gate" style="background: #030102; z-index: 99999999; display: flex; flex-direction: column; align-items: center; justify-content: center; position: fixed; inset: 0; cursor: pointer; transition: opacity 2s ease, filter 2s ease;" onclick="unlockSite()">
+    
+    <!-- Ultra soft drifting particles -->
+    <div style="position:absolute; inset:0; pointer-events:none; background-image: radial-gradient(1px 1px at 40px 60px, rgba(255,236,210,0.4) 50%, transparent 100%), radial-gradient(2px 2px at 150px 20px, rgba(217,120,145,0.2) 50%, transparent 100%); background-size: 250px 250px; animation: etherealFlow 40s linear infinite; opacity: 0.4;"></div>
+    
+    <div style="text-align: center; z-index: 2; padding: 0 16px;">
+        <h1 class="gate-name">Vaishnavi</h1>
+        <p class="gate-sub">A universe awaits</p>
     </div>
+    <div class="gate-tap">Tap anywhere to enter</div>
 </div>
 
-
-<div id="introOverlay">
-    
-    <!-- PHASE 1: CAKE -->
+<div id="introOverlay" style="background: #030102; position: fixed; inset: 0; z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: background 3s ease;">
+    <!-- PHASE 1: THE CAKE -->
     <div id="phaseCake" class="intro-phase active">
-        <h2 style="font-family:'Brush Script MT', cursive; font-size: 3rem; color: #f9a8d4; margin-bottom: 5px; text-shadow: 0 0 15px rgba(249,168,212,0.5);">Happy 17th Birthday!</h2>
-        <p style="color: #cbd5e1; font-style: italic; margin-bottom: 40px;">Make a wish and swipe to blow out your candles... ♡</p>
-        
-        <div class="cake-stage" id="introCakeStage">
-            <div class="intro-banner" id="introBanner">Happy 17th Birthday, Vaishnavi! 🎉💖</div>
-            <div class="cake">
-                <div class="c-row-1">
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                </div>
-                <div class="c-row-2">
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                </div>
-                <div class="c-row-3">
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                    <div class="candle"><div class="flame"></div><div class="smoke">💨</div></div>
-                </div>
-                
-                <div class="cake-tier tier-top"><div class="icing"></div></div>
-                <div class="cake-tier tier-mid"><div class="icing"></div></div>
-                <div class="cake-tier tier-bot"><div class="icing"></div></div>
-            </div>
+        <div class="ck-head bday-title-anim">
+            <p class="ck-greet">Happy 17th Birthday</p>
+            <h2 class="ck-name">Jaanu</h2>
         </div>
+        <div id="introCakeStage" class="ck-stage">
+            <div class="ck-aura"></div>
+<svg class="ck-svg" viewBox="0 0 400 450" role="img" aria-label="A two-tier birthday cake with number candles 1 and 7">
+<defs>
+<linearGradient id="ckIv"><stop offset="0" stop-color="#d9afa3"/><stop offset=".22" stop-color="#fff0e4"/><stop offset=".6" stop-color="#fff8f0"/><stop offset="1" stop-color="#cfa296"/></linearGradient>
+<linearGradient id="ckPk"><stop offset="0" stop-color="#b24f69"/><stop offset=".22" stop-color="#f2a3b8"/><stop offset=".58" stop-color="#fbc6d3"/><stop offset="1" stop-color="#a9475f"/></linearGradient>
+<linearGradient id="ckGl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8b4c6"/><stop offset="1" stop-color="#e2688b"/></linearGradient>
+<linearGradient id="ckRg"><stop offset="0" stop-color="#9a5f50"/><stop offset=".3" stop-color="#f3d2c4"/><stop offset=".65" stop-color="#d79f8c"/><stop offset="1" stop-color="#8c5446"/></linearGradient>
+<linearGradient id="ckSh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e0614" stop-opacity="0"/><stop offset="1" stop-color="#1e0614" stop-opacity=".55"/></linearGradient>
+<linearGradient id="ckFl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff8a3d"/><stop offset=".6" stop-color="#ffc85a"/><stop offset="1" stop-color="#fff1a6"/></linearGradient>
+<radialGradient id="ckBr" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff6f8a"/><stop offset=".55" stop-color="#c4173f"/><stop offset="1" stop-color="#720c26"/></radialGradient>
+<radialGradient id="ckWm"><stop offset="0" stop-color="#ffc878" stop-opacity=".62"/><stop offset=".6" stop-color="#ff9f7a" stop-opacity=".16"/><stop offset="1" stop-color="#ff9f7a" stop-opacity="0"/></radialGradient>
+<radialGradient id="ckHl"><stop offset="0" stop-color="#ffd9a0" stop-opacity=".75"/><stop offset="1" stop-color="#ffb070" stop-opacity="0"/></radialGradient>
+<radialGradient id="ckTop" cx=".5" cy=".4"><stop offset="0" stop-color="#ffe0e8"/><stop offset="1" stop-color="#f4a8bd"/></radialGradient>
+<clipPath id="ckSil"><path d="M60 266V362A140 28 0 0 0 340 362V266Z"/><ellipse cx="200" cy="266" rx="140" ry="28"/><path d="M112 186V262A88 16 0 0 0 288 262V186Z"/><ellipse cx="200" cy="186" rx="88" ry="16"/></clipPath>
+<g id="ckSb"><path d="M0-8C8-8 11 0 0 12C-11 0-8-8 0-8Z" fill="url(#ckBr)"/><path d="M-6-8Q-3-4 0-6Q3-4 6-8Q0-12-6-8Z" fill="#78a35f"/><g fill="#ffe7a3"><circle cx="-3" cy="-1" r=".9"/><circle cx="3" cy="-1" r=".9"/><circle cx="0" cy="3" r=".9"/><circle cx="-2" cy="7" r=".8"/><circle cx="2" cy="7" r=".8"/></g><ellipse cx="-4" cy="-4" rx="2" ry="1.2" fill="#fff" opacity=".4"/></g>
+<path id="ck1" d="M-12-62L3-77V-2" fill="none" stroke-linejoin="round"/>
+<path id="ck7" d="M-19-76H17L-6-2" fill="none" stroke-linejoin="round"/>
+</defs>
+<ellipse cx="200" cy="404" rx="210" ry="40" fill="url(#ckHl)" opacity=".3"/>
+<ellipse cx="200" cy="430" rx="62" ry="9" fill="url(#ckRg)"/>
+<path d="M184 400h32l6 30h-44z" fill="url(#ckRg)"/>
+<ellipse cx="200" cy="378" rx="180" ry="28" fill="url(#ckRg)"/>
+<ellipse cx="200" cy="372" rx="172" ry="25" fill="#f6dccf" stroke="#fff3ea" stroke-opacity=".6"/>
+<ellipse cx="200" cy="376" rx="146" ry="27" fill="#3a0f22" opacity=".28"/>
+<path d="M60 266V362A140 28 0 0 0 340 362V266Z" fill="url(#ckPk)"/>
+<ellipse cx="200" cy="266" rx="140" ry="28" fill="url(#ckTop)"/>
+<path d="M86 267A114 22 0 0 0 314 267" fill="none" stroke="#b5546f" stroke-opacity=".35" stroke-width="8" stroke-linecap="round" stroke-dasharray=".1 11"/>
+<path d="M86 266A114 22 0 0 0 314 266" fill="none" stroke="#fff4e8" stroke-width="8" stroke-linecap="round" stroke-dasharray=".1 11"/>
+<path d="M88 290.8Q116 325 144 299.7Q172 331 200 302Q228 331 256 299.7Q284 325 312 290.8" fill="none" stroke="#b5546f" stroke-opacity=".35" stroke-width="6.5" stroke-linecap="round" stroke-dasharray=".1 9" transform="translate(0 1.5)"/>
+<path d="M88 290.8Q116 325 144 299.7Q172 331 200 302Q228 331 256 299.7Q284 325 312 290.8" fill="none" stroke="#fff4e8" stroke-width="6.5" stroke-linecap="round" stroke-dasharray=".1 9"/>
+<g fill="#fff0e2" stroke="#e58aa3" stroke-width="1.6"><circle cx="88" cy="290.8" r="6.5"/><circle cx="144" cy="299.7" r="6.5"/><circle cx="200" cy="302" r="6.5"/><circle cx="256" cy="299.7" r="6.5"/><circle cx="312" cy="290.8" r="6.5"/></g>
+<text class="ck-mono" x="168" y="358" text-anchor="middle">V</text>
+<path d="M0 6C-9-1-9-9-4.5-9C-2-9 0-7 0-5C0-7 2-9 4.5-9C9-9 9-1 0 6Z" transform="translate(200 346)" fill="#e0668a"/>
+<text class="ck-mono" x="232" y="358" text-anchor="middle">R</text>
+<path d="M60 362A140 28 0 0 0 340 362" fill="none" stroke="#b5546f" stroke-opacity=".35" stroke-width="9" stroke-linecap="round" stroke-dasharray=".1 12.5" transform="translate(0 1.5)"/>
+<path d="M60 362A140 28 0 0 0 340 362" fill="none" stroke="#fff4e8" stroke-width="9" stroke-linecap="round" stroke-dasharray=".1 12.5"/>
+<ellipse cx="200" cy="266" rx="92" ry="17" fill="#8d2f4d" opacity=".25"/>
+<path d="M112 186V262A88 16 0 0 0 288 262V186Z" fill="url(#ckIv)"/>
+<ellipse cx="200" cy="186" rx="88" ry="16" fill="url(#ckGl)"/>
+<ellipse cx="178" cy="182" rx="40" ry="5" fill="#fff" opacity=".28"/>
+<g fill="#ec7f9f"><path d="M112 186A88 16 0 0 0 288 186L288 193A88 16 0 0 1 112 193Z"/><rect x="117.5" y="192" width="13" height="30" rx="6.5"/><rect x="140" y="196.5" width="12" height="40" rx="6"/><rect x="163" y="199" width="14" height="15" rx="7"/><rect x="188" y="200" width="12" height="30" rx="6"/><rect x="211.500" y="199.500" width="13" height="48" rx="6.500"/><rect x="235" y="198" width="14" height="20" rx="7"/><rect x="259.500" y="194.500" width="13" height="40" rx="6.500"/><rect x="276.500" y="190" width="11" height="18" rx="5.500"/></g>
+<g fill="#fff" opacity=".3"><ellipse cx="123" cy="204" rx="1.6" ry="7"/><ellipse cx="146" cy="212" rx="1.6" ry="9"/><ellipse cx="217" cy="214" rx="1.6" ry="10"/><ellipse cx="265" cy="208" rx="1.6" ry="8"/></g>
+<g clip-path="url(#ckSil)"><rect x="40" y="180" width="320" height="220" fill="url(#ckSh)"/><ellipse class="ck-light" cx="200" cy="200" rx="200" ry="150" fill="url(#ckWm)"/></g>
+<path d="M124 196q-9-7-18-2q8 8 18 2z" fill="#79a463"/><path d="M276 196q9-7 18-2q-8 8-18 2z" fill="#79a463"/>
+<g transform="translate(173 193)"><ellipse cx="2" cy="1" rx="15" ry="4.5" fill="#6d1f3a" opacity=".4"/><use href="#ck1" stroke="#fff1de" stroke-width="15" stroke-linecap="round"/><use href="#ck1" stroke="#e58aa3" stroke-width="15" stroke-dasharray="5 9"/><use href="#ck1" stroke="#fff" stroke-width="3" opacity=".5" stroke-linecap="round" transform="translate(-3 0)"/><path d="M3-84v-9" stroke="#3a2029" stroke-width="2" stroke-linecap="round"/></g>
+<g transform="translate(228 193)"><ellipse cx="0" cy="1" rx="20" ry="4.5" fill="#6d1f3a" opacity=".4"/><use href="#ck7" stroke="#fff1de" stroke-width="15" stroke-linecap="round"/><use href="#ck7" stroke="#e58aa3" stroke-width="15" stroke-dasharray="5 9"/><use href="#ck7" stroke="#fff" stroke-width="3" opacity=".5" stroke-linecap="round" transform="translate(-3 0)"/><path d="M-1-83v-9" stroke="#3a2029" stroke-width="2" stroke-linecap="round"/></g>
+<use href="#ckSb" transform="translate(138 192) scale(1.1)"/><use href="#ckSb" transform="translate(152 204) scale(.95)"/><use href="#ckSb" transform="translate(254 204) scale(.95)"/><use href="#ckSb" transform="translate(268 192) scale(1.1)"/>
+<circle class="ck-halo" style="--d:1.5s" cx="176" cy="83" r="44" fill="url(#ckHl)"/>
+<circle class="ck-halo" style="--d:1.8s" cx="227" cy="84" r="44" fill="url(#ckHl)"/>
+<g transform="translate(176 100)"><g class="ck-fl" style="--d:1.5s"><path d="M0 0C-8-5-9-17 0-34C9-17 8-5 0 0Z" fill="url(#ckFl)"/><path d="M0-1C-4-4-4-11 0-20C4-11 4-4 0-1Z" fill="#fffbe6"/></g><path class="ck-smoke" pathLength="100" d="M0-4C6-14-6-24 0-34S-5-52 3-64" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/></g>
+<g transform="translate(227 101)"><g class="ck-fl" style="--d:1.8s"><path d="M0 0C-8-5-9-17 0-34C9-17 8-5 0 0Z" fill="url(#ckFl)"/><path d="M0-1C-4-4-4-11 0-20C4-11 4-4 0-1Z" fill="#fffbe6"/></g><path class="ck-smoke" pathLength="100" d="M0-4C6-14-6-24 0-34S-5-52 3-64" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/></g>
+<g fill="#ffe3c0"><circle class="ck-mote" cx="92" cy="210" r="1.6" style="animation-delay:2s"/><circle class="ck-mote" cx="310" cy="230" r="1.8" style="animation-delay:3.4s"/><circle class="ck-mote" cx="70" cy="300" r="1.4" style="animation-delay:4.6s"/><circle class="ck-mote" cx="336" cy="300" r="1.6" style="animation-delay:2.8s"/><circle class="ck-mote" cx="130" cy="140" r="1.5" style="animation-delay:5.2s"/><circle class="ck-mote" cx="282" cy="130" r="1.7" style="animation-delay:3.9s"/><circle class="ck-mote" cx="200" cy="60" r="1.4" style="animation-delay:6s"/></g>
+</svg>
+        </div>
+        <p id="swipeHintText" class="ck-hint">Gently swipe across the candles to make a wish...</p>
     </div>
     
     <!-- PHASE 2: ENVELOPE -->
@@ -831,14 +982,18 @@ h1, h2 {
     </div>
     
     <!-- PHASE 3: LETTER & ENTER -->
-    <div id="phaseLetter" class="intro-phase">
-        <div class="intro-letter-box">
-            <h3 style="color:var(--rose); text-align:center; margin-bottom: 25px; border-bottom: 1px solid #f0e0df; padding-bottom:15px;">My Dearest Vaishnavi,</h3>
-            <div class="intro-letter-text" id="introLetterTextContainer">
+    <div id="phaseLetter" class="intro-phase" style="background: radial-gradient(circle at center, #2b1a23 0%, #05020a 100%);">
+        
+        <!-- Ambient stars for the letter background -->
+        <div style="position:absolute; inset:0; pointer-events:none; background-image: radial-gradient(2px 2px at 40px 60px, rgba(255,255,255,0.2) 50%, transparent 100%), radial-gradient(2px 2px at 250px 120px, rgba(249,168,212,0.2) 50%, transparent 100%); background-size: 400px 400px; animation: etherealFlow 30s linear infinite; z-index:0;"></div>
+
+        <div class="intro-letter-box" style="background: rgba(255,253,249,0.03); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255,255,255,0.1); border-top: 1px solid rgba(255,255,255,0.25); box-shadow: 0 30px 60px rgba(0,0,0,0.8); z-index:2; color: #fff; max-width: 90vw;">
+            <h3 style="color:#f9a8d4; text-align:center; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom:15px; font-family: 'Playfair Display', serif; font-weight: 300; font-size: 1.5rem; letter-spacing: 1px;">My Dearest Vaishnavi,</h3>
+            <div class="intro-letter-text" id="introLetterTextContainer" style="color: #e2e8f0; font-family: 'Georgia', serif; font-size: 1.15rem; line-height: 1.8; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">
                 Your personalised message will appear here.
             </div>
-            <div style="text-align:center; margin-top:10px;">
-                <button class="btn" style="padding: 15px 40px; font-size: 16px; font-weight:bold;" onclick="enterMainSite()">Enter Your Universe ✨</button>
+            <div style="text-align:center; margin-top:20px;">
+                <button class="btn" style="padding: 16px 45px; font-size: 16px; font-weight:600; background: linear-gradient(135deg, #d97891, #8e435b); color: white; border-radius: 50px; box-shadow: 0 10px 25px rgba(217, 120, 145, 0.4), inset 0 2px 5px rgba(255,255,255,0.2); letter-spacing: 1px;" onclick="enterMainSite()">Step Into My Heart ✨</button>
             </div>
         </div>
     </div>
@@ -1284,7 +1439,7 @@ MWWWWWWWWAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 <script>
 const $=id=>document.getElementById(id);
 function loadOverrides(){try{return JSON.parse(localStorage.getItem('vaishnaviBirthdayEditsV22')||'{}')}catch(e){return {}}}
-localStorage.removeItem('vaishnaviBirthdayEditsV22'); let edits={}; // Nuked local storage so it uses hardcoded data
+try{localStorage.removeItem('vaishnaviBirthdayEditsV22');}catch(e){} let edits={}; // Nuked local storage so it uses hardcoded data
 
 function render(){
  const data={...SITE, ...edits, photos: SITE.photos}; // Force hardcoded photos to override local storage
@@ -1429,84 +1584,121 @@ if(introCakeStage) {
 }
 
 function triggerIntroGrandVisual() {
-    $('introBanner').classList.add('show');
-    
     const overlay = $('introOverlay');
+    if(navigator.vibrate) navigator.vibrate([200, 100, 300, 100, 500]);
+
+    // 1. Gently fade out the cake and original text
+    let cakeStage = $('introCakeStage');
+    let title = document.querySelector('.bday-title-anim');
+    let sub = document.querySelector('.bday-sub-anim');
     
-    // 1. Bright Flash Effect
+    cakeStage.style.transition = 'opacity 1.5s ease, transform 1.5s ease';
+    cakeStage.style.opacity = '0';
+    cakeStage.style.transform = 'translateY(50px)';
+    
+    if(title) { title.style.transition = 'opacity 1s ease'; title.style.opacity = '0'; }
+    if(sub) { sub.style.transition = 'opacity 1s ease'; sub.style.opacity = '0'; }
+
+    // 2. Cinematic Flash
     let flash = document.createElement('div');
     flash.style.position = 'absolute';
     flash.style.inset = '0';
     flash.style.background = '#ffffff';
     flash.style.zIndex = '9999';
-    flash.style.opacity = '1';
-    flash.style.transition = 'opacity 1s ease-out';
+    flash.style.opacity = '0';
+    flash.style.transition = 'opacity 0.8s ease-out';
     overlay.appendChild(flash);
-    setTimeout(() => flash.style.opacity = '0', 50);
-    setTimeout(() => flash.remove(), 1050);
-
-    // 2. Spectacular Background Shift (Pulsing celebratory colors)
-    overlay.style.background = 'linear-gradient(-45deg, #ff9a9e, #fecfef, #a18cd1, #fbc2eb)';
-    overlay.style.backgroundSize = '400% 400%';
-    overlay.style.animation = 'gradientWedding 3s ease infinite';
-
-    // 3. Massive Confetti Rain
-    const symbols = ['🎉','✨','💖','🎂','🌟', '🎈', '🎊', '🎀'];
-    for(let i=0; i<15; i++) {
-        setTimeout(() => {
-            let c = document.createElement('span');
-            c.className = 'confetti-intro';
-            c.textContent = symbols[Math.floor(Math.random()*symbols.length)];
-            c.style.left = (Math.random() * 100) + 'vw';
-            c.style.top = '-10vh';
-            c.style.fontSize = (20 + Math.random()*45) + 'px';
-            c.style.animationDuration = (2 + Math.random()*3) + 's';
-            c.style.filter = 'drop-shadow(0 5px 15px rgba(0,0,0,0.4))';
-            c.style.zIndex = '50';
-            overlay.appendChild(c);
-        }, Math.random() * 5000);
-    }
     
-    // 4. Fireworks Blasts
-    for(let i=0; i<8; i++) {
+    requestAnimationFrame(() => {
+        flash.style.opacity = '0.8';
+        setTimeout(() => flash.style.opacity = '0', 100);
+        setTimeout(() => flash.remove(), 1000);
+    });
+
+    // 3. Shift background to a gorgeous, deep magical twilight
+    overlay.style.animation = 'none';
+    overlay.style.background = 'radial-gradient(circle at center, #3a1c2d, #05020a)';
+
+    // 4. Cinematic text emerges from the dark
+    let elegantText = document.createElement('div');
+    elegantText.innerHTML = "Make a wish...<br><span style='font-size: 2rem; color: #f9a8d4; font-family: Georgia, serif; font-style: italic; font-weight: normal; letter-spacing: 2px;'>It's time to open your gift.</span>";
+    elegantText.style.position = 'absolute';
+    elegantText.style.top = '45%';
+    elegantText.style.left = '50%';
+    elegantText.style.transform = 'translate(-50%, -50%)';
+    elegantText.style.fontFamily = "'Great Vibes', cursive";
+    elegantText.style.fontSize = "clamp(3.5rem, 8vw, 5.5rem)";
+    elegantText.style.color = "#fff";
+    elegantText.style.textAlign = "center";
+    elegantText.style.textShadow = "0 0 25px #d97891, 0 0 50px rgba(249,168,212,0.5)";
+    elegantText.style.opacity = "0";
+    elegantText.style.transition = "opacity 2s ease, transform 3s ease-out";
+    elegantText.style.zIndex = "45";
+    elegantText.style.width = "100%";
+    overlay.appendChild(elegantText);
+
+    setTimeout(() => {
+        elegantText.style.opacity = '1';
+        elegantText.style.transform = 'translate(-50%, -55%)'; // drift up slowly
+    }, 800);
+
+    // 5. Elegant Floating Fairy Dust (replaces the cheap emoji confetti)
+    for(let i=0; i<45; i++) {
+        setTimeout(() => {
+            let spark = document.createElement('div');
+            spark.style.position = 'absolute';
+            let size = (Math.random() * 5 + 2);
+            spark.style.width = size + 'px';
+            spark.style.height = size + 'px';
+            spark.style.background = Math.random() > 0.3 ? '#fff' : '#f9a8d4';
+            spark.style.borderRadius = '50%';
+            spark.style.boxShadow = `0 0 15px ${spark.style.background}, 0 0 30px ${spark.style.background}`;
+            spark.style.left = (Math.random() * 100) + 'vw';
+            spark.style.top = '110vh'; // start below screen
+            spark.style.zIndex = '40';
+            spark.style.opacity = '0';
+            overlay.appendChild(spark);
+
+            spark.animate([
+                { transform: 'translateY(0) scale(0)', opacity: 0 },
+                { opacity: 1, offset: 0.2 },
+                { opacity: 1, offset: 0.8 },
+                { transform: `translateY(-120vh) scale(${Math.random() + 0.5})`, opacity: 0 }
+            ], {
+                duration: 4000 + Math.random() * 5000,
+                easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+                fill: 'forwards'
+            });
+            setTimeout(() => spark.remove(), 10000);
+        }, Math.random() * 3000);
+    }
+
+    // 6. Sophisticated distant fireworks
+    for(let i=0; i<6; i++) {
         setTimeout(() => {
             let fw = document.createElement('div');
             fw.className = 'firework';
             fw.style.left = (Math.random() * 100) + 'vw';
             fw.style.top = (Math.random() * 100) + 'vh';
-            let hue = ['rgba(255,255,255,1)', 'rgba(255,215,0,1)', 'rgba(255,105,180,1)'][Math.floor(Math.random()*3)];
+            let hue = ['rgba(255,255,255,0.8)', 'rgba(249,168,212,0.8)', 'rgba(217,120,145,0.8)'][Math.floor(Math.random()*3)];
             fw.style.background = `radial-gradient(circle, ${hue} 0%, transparent 70%)`;
-            fw.style.zIndex = '45';
+            fw.style.zIndex = '35';
             overlay.appendChild(fw);
-        }, Math.random() * 4500);
+        }, Math.random() * 3000);
     }
-
-    // 5. Floating Balloons & Hearts
-    for(let i=0; i<15; i++) {
-        setTimeout(() => {
-            let f = document.createElement('span');
-            f.className = 'wedding-float';
-            f.textContent = ['🎈', '❤️', '✨'][Math.floor(Math.random()*3)];
-            f.style.left = (Math.random() * 100) + 'vw';
-            f.style.fontSize = (40 + Math.random()*50) + 'px';
-            f.style.animationDuration = (3 + Math.random()*4) + 's';
-            f.style.zIndex = '40';
-            overlay.appendChild(f);
-        }, Math.random() * 5000);
-    }
-    
-    if(navigator.vibrate) navigator.vibrate([200, 100, 300, 100, 500]);
 
     // Transition to Envelope Phase
     setTimeout(() => {
+        elegantText.style.opacity = '0';
+        setTimeout(() => elegantText.remove(), 2000);
+        
         $('phaseCake').classList.remove('active');
         $('phaseCake').classList.add('hidden-up');
         $('phaseEnvelope').classList.add('active');
         
-        // Smoothly fade background back to intimate dark for reading the letter
-        overlay.style.animation = 'none';
+        // Final settle into pure dark background for the letter
         overlay.style.background = 'radial-gradient(circle at center, #2b1a23, #0a060d)';
-    }, 6500); // 6.5 seconds of grand celebration before the envelope drops
+    }, 6500);
 }
 
 function openIntroEnvelope() {
@@ -1529,7 +1721,7 @@ function enterMainSite() {
     }, 1500);
 }
 
-const startDate = new Date("2025-12-01T18:55:00").getTime();
+const startDate = new Date("2025-12-01T00:00:00").getTime();
 setInterval(() => {
     const now = new Date().getTime();
     const distance = now - startDate;
@@ -1895,23 +2087,53 @@ function triggerCuddles() {
 }
 
 function triggerMakeouts() {
-    let overlay = document.createElement('div');
+    if(document.querySelector('.spicy-overlay')) return;   // don't stack runs
+    if(navigator.vibrate) navigator.vibrate([40, 30, 40, 30, 80]);
+
+    const overlay = document.createElement('div');
     overlay.className = 'spicy-overlay';
+    overlay.style.animationDuration = '7.5s';
     document.body.appendChild(overlay);
-    // Increased from 8 to 50 to flood the screen
-    for(let i=0; i<50; i++) {
-        let mhm = document.createElement('div');
-        mhm.className = 'mhm-text';
-        // Make the mhmmmmms significantly longer
-        let mCount = Math.floor(Math.random() * 25) + 12; 
-        mhm.innerText = "mh" + "m".repeat(mCount) + "....";
-        mhm.style.left = (Math.random() * 95 - 5) + 'vw'; // Spread wider
-        mhm.style.top = (Math.random() * 100 - 5) + 'vh'; // Spread taller
-        mhm.style.fontSize = (1.2 + Math.random() * 3) + 'rem'; // Slightly larger variance
-        mhm.style.animationDelay = (Math.random() * 2.5) + 's';
-        overlay.appendChild(mhm);
+
+    const layer = document.createElement('div');
+    layer.className = 'mhm-layer';
+    document.body.appendChild(layer);
+
+    // Grid of cells (2 waves) so the mhmmm's blanket the entire screen
+    const W = window.innerWidth, H = window.innerHeight;
+    const cols = W < 600 ? 2 : W < 1000 ? 3 : 4;
+    const rowH = W < 600 ? 62 : 74;
+    const rows = Math.ceil(H / rowH) + 1;
+    const cellW = W / cols;
+    for(let wave = 0; wave < 2; wave++) {
+        for(let r = 0; r < rows; r++) {
+            for(let c = 0; c < cols; c++) {
+                const text = 'mh' + 'm'.repeat(Math.floor(Math.random() * 13) + 5) + '....';
+                const textW = text.length * 0.56;                       // approx width in em
+                const size = Math.max(14, Math.min(cellW / textW, 22 + Math.random() * 38));
+                const el = document.createElement('div');
+                el.className = 'mhm-text';
+                el.innerText = text;
+                el.style.fontSize = size + 'px';
+                el.style.left = (c * cellW + Math.random() * Math.max(0, cellW - size * textW)) + 'px';
+                el.style.top = (r * rowH + wave * rowH / 2 + Math.random() * rowH * 0.4 - rowH / 2) + 'px';
+                el.style.animationDuration = (3.5 + Math.random()) + 's';
+                el.style.animationDelay = (wave * 1.4 + Math.random() * 1.2) + 's';
+                layer.appendChild(el);
+            }
+        }
     }
-    setTimeout(()=>overlay.remove(), 6500); // Give the massive flood time to clear
+
+    // A few kisses drifting up too
+    for(let k = 0; k < 22; k++) {
+        const kiss = document.createElement('div');
+        kiss.className = 'makeout-anim';
+        kiss.textContent = '💋';
+        kiss.style.cssText = `position:absolute;bottom:-60px;left:${Math.random() * 94}vw;font-size:${28 + Math.random() * 34}px;opacity:0;animation-delay:${Math.random() * 3.2}s;animation-duration:${2.4 + Math.random() * 1.6}s`;
+        layer.appendChild(kiss);
+    }
+
+    setTimeout(() => { overlay.remove(); layer.remove(); }, 7800);
 }
 
 function triggerLanterns() {
@@ -2264,26 +2486,6 @@ function breakPinata() {
     }
     setTimeout(() => $('pinataMessage').classList.add('show'), 800);
 }
-
-/* FOOLPROOF INTRO HANDLER */
-document.addEventListener('DOMContentLoaded', () => {
-    const candles = document.querySelectorAll('#introCakeStage .candle');
-    candles.forEach(c => c.classList.remove('out'));
-
-    let blown = false;
-    const cakeStage = document.getElementById('phaseCake');
-    
-    if (cakeStage) {
-        cakeStage.addEventListener('click', (e) => {
-            if (blown) return;
-            blown = true;
-            if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
-            candles.forEach(c => c.classList.add('out'));
-            triggerIntroGrandVisual();
-        });
-    }
-});
-
 
 /* EASTER EGG LOGIC */
 document.addEventListener('DOMContentLoaded', () => {
@@ -2660,30 +2862,91 @@ function toggleMusic() {
     }
 }
 
+function whenCinematicDone(cb) {
+    const ci = document.getElementById('cinematicIntro');
+    (function check() { if(!ci || ci.style.display === 'none') cb(); else setTimeout(check, 200); })();
+}
+
 function unlockSite() {
-    $('gate').classList.add('hidden');
-    if(navigator.vibrate) navigator.vibrate([100, 50, 100]); 
+    let gate = $('gate');
+    if(gate.dataset.done) return;
+    gate.dataset.done = '1';
+    gate.style.pointerEvents = 'none';
+    whenCinematicDone(() => {
+        $('introOverlay').classList.add('live');          // cake rises, candles light
+        setTimeout(() => { window.cakeReady = true; }, 2800);
+    });
+    gate.style.opacity = '0';
+    gate.style.filter = 'blur(20px)';
+    
+    if(navigator.vibrate) navigator.vibrate([30]); 
     
     // Start global ambient soundtrack
     let ambient = $('globalAmbient');
-    ambient.volume = 0.25; // Slightly louder just in case
+    ambient.volume = 0.25;
     let playPromise = ambient.play();
     if (playPromise !== undefined) {
         playPromise.catch(e => {
-            console.log("Audio play failed, attaching to next tap:", e);
-            // Fallback: If browser blocks it, play on the very next tap anywhere
             document.body.addEventListener('touchstart', () => { ambient.play(); }, {once:true});
             document.body.addEventListener('click', () => { ambient.play(); }, {once:true});
         });
     }
     
-    setTimeout(() => { $('gate').style.display = 'none'; }, 1500);
-    setTimeout(() => { let mBtn = $('musicToggle'); if(mBtn) { mBtn.classList.add('visible'); mBtn.classList.add('spinning'); } }, 2000);
+    setTimeout(() => { 
+        gate.style.display = 'none'; 
+    }, 2000);
+    
+    setTimeout(() => { let mBtn = $('musicToggle'); if(mBtn) { mBtn.classList.add('visible'); mBtn.classList.add('spinning'); } }, 3000);
 }
 
+// ---------------- CAKE: BLOW OUT THE CANDLES ----------------
+let candlesOut = false;
+function blowOutCandles() {
+    if(candlesOut || !window.cakeReady) return;   // ignore taps until the candles are lit
+    candlesOut = true;
+    if(navigator.vibrate) navigator.vibrate([100, 50, 150]);
+    $('introOverlay').classList.add('blown');
+    spawnEmbers($('introCakeStage'));
+    setTimeout(triggerIntroGrandVisual, 1900);    // existing "Make a wish..." finale -> envelope
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const phase = $('phaseCake'), stage = $('introCakeStage');
+    if(!phase || !stage) return;
+    stage.addEventListener('touchmove', e => { e.preventDefault(); blowOutCandles(); }, {passive:false});
+    stage.addEventListener('mousemove', e => { if(e.buttons === 1) blowOutCandles(); });
+    phase.addEventListener('click', blowOutCandles);
+});
 
+function spawnEmbers(stage) {
+    const r = stage.getBoundingClientRect();
+    stage.querySelectorAll('.ck-fl').forEach(fl => {
+        const b = fl.getBoundingClientRect();
+        const cx = b.left + b.width / 2 - r.left, cy = b.top + b.height / 2 - r.top;
+        for(let i = 0; i < 16; i++) {
+            const ember = document.createElement('div');
+            ember.className = 'magic-ember';
+            const size = Math.random() * 4 + 1;
+            ember.style.width = size + 'px';
+            ember.style.height = size + 'px';
+            ember.style.left = cx + 'px';
+            ember.style.top = cy + 'px';
+            ember.style.background = Math.random() > 0.5 ? '#f9a8d4' : '#ffecd2';
+            ember.style.boxShadow = `0 0 10px ${ember.style.background}`;
+            stage.appendChild(ember);
+            const angle = (Math.random() * Math.PI) - (Math.PI / 2);
+            const dist = Math.random() * 160 + 80;
+            const tx = Math.sin(angle) * dist, ty = -Math.cos(angle) * dist - Math.random() * 80;
+            ember.animate([
+                { transform: 'translate(-50%, -50%) scale(1)', opacity: 0.8 },
+                { opacity: 1, offset: 0.2 },
+                { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0)`, opacity: 0 }
+            ], { duration: 2500 + Math.random() * 2000, easing: 'cubic-bezier(0.25, 1, 0.5, 1)', fill: 'forwards' });
+            setTimeout(() => ember.remove(), 5000);
+        }
+    });
+}
 
-
+/* MAGICAL TOUCH TRAIL */
 /* MAGICAL TOUCH TRAIL */
 const trailCanvas = document.createElement('canvas');
 trailCanvas.style.position = 'fixed';
